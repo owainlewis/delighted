@@ -2,13 +2,15 @@
 
 A Haskell client for working with the Delighted.com API. You will need an API key to use this library.
 
+![](https://dcx14qs33eg2z.cloudfront.net/assets/logos-s5d111f3d38-cec0f8af4719c5b72440a3fbb849ca66.png)
+
 # Add Person
 
 ```haskell
 
 import qualfied Network.Delighted.API as Delighted
 
-Delighted.createPerson key $ M.fromList [ ("email", "owain.lewis@owainlewis.com") ]
+Delighted.createPerson "APIKEY" $ M.fromList [ ("email", "owain.lewis@owainlewis.com") ]
 ```
 
 # Get Survey Repsonses
