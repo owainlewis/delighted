@@ -1,6 +1,12 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
-module Network.Delighted.API where
+module Network.Delighted.API 
+  ( createPerson
+  , getSurveyResponses
+  , getMetrics
+  , unsubscribe
+  , unsubscribes
+  ) where
 
 import           Control.Applicative   ((<$>), (<$>))
 import           Control.Lens          ((&), (.~), (?~), (^.))
