@@ -17,11 +17,13 @@ Delighted.createPerson "APIKEY" $ M.fromList [ ("email", "owain.lewis@owainlewis
 
 ```haskell
 λ> getSurveyResponses key M.empty
-Just [ SurveyResponse { responseId = "13133762",
-                        surveyPersonId = "52830503",
-                        score = 10,
-	                comment = Just "Great product"}
-     ]
+Just [ 
+  SurveyResponse { 
+    responseId = "13133762",
+    surveyPersonId = "52830503",
+    score = 10,
+    comment = Just "Great product"}
+  ]
 ```
 
 # Get Metrics
