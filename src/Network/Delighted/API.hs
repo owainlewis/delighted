@@ -138,9 +138,7 @@ unsubscribe apiKey email =
       json <- postRequest apiKey "/v1/unsubscribes.json" opts
       pure . decode $ json :: IO (Maybe OK)
 
-getMetrics :: String ->
-              M.Map String String ->
-              IO (Maybe MetricsResponse)
+getMetrics :: String -> M.Map String String -> IO (Maybe MetricsResponse)
 getMetrics apiKey opts = do
     json <- getRequest apiKey "/v1/metrics.json" opts
     pure . decode $ json :: IO (Maybe MetricsResponse)
@@ -165,19 +163,14 @@ createPerson apiKey opts = do
 
 -- | Retrieve all survey responses for your account.
 --
-getSurveyResponses
-  :: String -> M.Map String String -> IO (Maybe [SurveyResponse])
+getSurveyResponses :: String -> M.Map String String -> IO (Maybe [SurveyResponse])
 getSurveyResponses apiKey opts = do
     json <- getRequest apiKey "/v1/survey_responses.json" opts
     pure . decode $ json :: IO (Maybe [SurveyResponse])
 
 -- | Retrieve all unsubscribed people for your account.
 --
-unsubscribes
-  :: String ->
-     M.Map String String ->
-     IO (Maybe [UnsubscribesResponse])
+unsubscribes:: String -> M.Map String String -> IO (Maybe [UnsubscribesResponse])
 unsubscribes apiKey opts = do
     json <- getRequest apiKey "/v1/unsubscribes.json" opts
     pure . decode $ json :: IO (Maybe [UnsubscribesResponse])
-
