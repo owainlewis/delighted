@@ -9,6 +9,7 @@ A Haskell client for working with the Delighted.com API. You will need an API ke
 ```haskell
 
 import qualfied Network.Delighted.API as Delighted
+import qualified Data.Map as M
 
 Delighted.createPerson "APIKEY" $ M.fromList [ ("email", "owain.lewis@owainlewis.com") ]
 ```
@@ -18,6 +19,7 @@ Delighted.createPerson "APIKEY" $ M.fromList [ ("email", "owain.lewis@owainlewis
 ```haskell
 
 import qualfied Network.Delighted.API as Delighted
+import qualified Data.Map as M
 
 λ> Delighted.getSurveyResponses key M.empty
 Just [ 
@@ -33,6 +35,7 @@ Just [
 
 ```haskell
 import qualfied Network.Delighted.API as Delighted
+import qualified Data.Map as M
 
 Delighted.getMetrics M.empty
 ```
