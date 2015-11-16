@@ -34,7 +34,7 @@ mapToParams :: Options ->
                M.Map String String ->
                Options
 mapToParams opts m =
-    M.foldrWithKey (\k v ks -> opts & param (T.pack k) .~ [T.pack v]) opts m
+    M.foldrWithKey (\k v ks -> ks & param (T.pack k) .~ [T.pack v]) opts m
 
 getRequest :: String -> String -> M.Map String String -> IO LBS.ByteString
 getRequest apiKey resource queryParams = do
