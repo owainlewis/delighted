@@ -16,7 +16,10 @@ Delighted.createPerson "APIKEY" $ M.fromList [ ("email", "owain.lewis@owainlewis
 # Get Survey Repsonses
 
 ```haskell
-λ> getSurveyResponses key M.empty
+
+import qualfied Network.Delighted.API as Delighted
+
+λ> Delighted.getSurveyResponses key M.empty
 Just [ 
   SurveyResponse { 
     responseId = "13133762",
@@ -29,6 +32,7 @@ Just [
 # Get Metrics
 
 ```haskell
+import qualfied Network.Delighted.API as Delighted
 
-getMetrics M.empty
+Delighted.getMetrics M.empty
 ```
