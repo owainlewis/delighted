@@ -55,7 +55,7 @@ postWithPayload apiKey resource payload = do
     let opts = requestOpts apiKey
     r <- postWith opts (buildResource resource) (Aeson.toJSON payload)
     pure $ r ^. responseBody
-
+    
 --------------------------------------------------------------------------------------
 
 data MetricsResponse = MetricsResponse {
@@ -112,7 +112,6 @@ instance FromJSON Person where
 data OK = OK { ok :: Bool } deriving ( Eq, Ord, Show, Generic )
 
 instance FromJSON OK
-
 
 data SurveyResponse = SurveyResponse {
     responseId     :: String
