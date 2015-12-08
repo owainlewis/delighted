@@ -22,7 +22,6 @@ import           GHC.Generics
 import           Network.Wreq
 
 --------------------------------------------------------------------------------------
-
 requestOpts :: String -> Options
 requestOpts apiKey = defaults & auth ?~ basicAuth (C8.pack apiKey) ""
                               & header "Accept" .~ ["application/json"]
