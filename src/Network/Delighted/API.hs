@@ -21,7 +21,6 @@ import qualified Data.Text             as T
 import           GHC.Generics
 import           Network.Wreq
 
---------------------------------------------------------------------------------------
 requestOpts :: String -> Options
 requestOpts apiKey = defaults & auth ?~ basicAuth (C8.pack apiKey) ""
                               & header "Accept" .~ ["application/json"]
@@ -54,8 +53,6 @@ postWithPayload apiKey resource payload = do
     let opts = requestOpts apiKey
     r <- postWith opts (buildResource resource) (Aeson.toJSON payload)
     pure $ r ^. responseBody
-    
---------------------------------------------------------------------------------------
 
 data MetricsResponse = MetricsResponse {
     nps              :: Int
