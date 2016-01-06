@@ -123,8 +123,6 @@ instance FromJSON SurveyResponse where
                            (o .: "score") <*>
                            (o .: "comment")
 
---------------------------------------------------------------------------------------
-
 unsubscribe :: String -> String -> IO (Maybe OK)
 unsubscribe apiKey email =
     let opts = M.fromList [("person_email", email)] in
@@ -156,14 +154,12 @@ createPerson apiKey opts = do
     pure . decode $ json :: IO (Maybe Person)
 
 -- | Retrieve all survey responses for your account.
---
 getSurveyResponses :: String -> M.Map String String -> IO (Maybe [SurveyResponse])
 getSurveyResponses apiKey opts = do
     json <- getRequest apiKey "/v1/survey_responses.json" opts
     pure . decode $ json :: IO (Maybe [SurveyResponse])
 
 -- | Retrieve all unsubscribed people for your account.
---
 unsubscribes:: String -> M.Map String String -> IO (Maybe [UnsubscribesResponse])
 unsubscribes apiKey opts = do
     json <- getRequest apiKey "/v1/unsubscribes.json" opts
